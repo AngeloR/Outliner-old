@@ -13,7 +13,7 @@ class Controller_Archive extends Controller {
 		
 		$node = R::dispense('node');
 		
-		$parent = $node->parent_node($path);
+		$parent = $node->current_node($path);
 		if(empty($parent)) {
 			return Controller_Site::error404('That node doesn\'t exist.');
 		}

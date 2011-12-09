@@ -65,7 +65,7 @@ class Model_Node extends RedBean_SimpleModel {
 		}
 	}
 	
-	public function parent_node($path) {
+	public static function current_node($path) {
 		if(empty($path) || $path == '/') {
 			// root path
 			$node = new stdClass();
@@ -94,6 +94,7 @@ class Model_Node extends RedBean_SimpleModel {
 		
 		return $node;
 	}
+
 	
 	/**
 	 * 
@@ -122,7 +123,7 @@ class Model_Node extends RedBean_SimpleModel {
 	 * @param string $node_type
 	 */
 	public function new_node($path,$title,$text,$node_type = '') {
-		$parent = $this->parent_node($path);
+		$parent = $this->current_node($path);
 		$time = date('U');
 
 		$this->title = trim($title);
