@@ -1,0 +1,8 @@
+plugin/*
+_plugins/*
+.settings/*
+.git/*
+.buildpath
+.project
+*.psd
+*.zip
