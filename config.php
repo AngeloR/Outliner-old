@@ -45,7 +45,7 @@ return array(
         'production' => array(
             'host' => 'localhost',
             'user' => 'root',
-            'pass' => '',
+            'pass' => 'root',
             'name' => 'outliner'
         ),
     ),
