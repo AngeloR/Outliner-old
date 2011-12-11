@@ -10,7 +10,14 @@ class Controller_Patch extends Controller {
 	}
 	
 	public static function current_version() {
-		return R::findOne('patch','1 order by id desc limit 1');
+	    $version = R::findOne('patch','1 order by id desc limit 1');
+        if(empty($version)) {
+            $version = config('app.version'); 
+        }
+        else {
+            $version = $version->version; 
+        }
+        return $version;
 	}
 	
 	public static function should_patch($version) {
