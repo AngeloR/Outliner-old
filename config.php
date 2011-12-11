@@ -76,7 +76,7 @@ return array(
      */
     'app' => array(
     	'version' => '0.5.4',
-    	'mode' =>0,
+    	'mode' =>1,
 			'theme' => 'default',
 			'path' => array(
 				'resource' => 'view/resources/',
