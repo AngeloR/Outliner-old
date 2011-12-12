@@ -122,7 +122,7 @@ class Model_Node extends RedBean_SimpleModel {
 	 * @param string $text
 	 * @param string $node_type
 	 */
-	public function new_node($path,$title,$text,$node_type = '') {
+	public function new_node($path,$title,$text = '',$node_type = '') {
 		$parent = $this->current_node($path);
 		$time = date('U');
 
