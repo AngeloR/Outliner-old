@@ -122,7 +122,7 @@
       </div>
 
       <footer>
-        <p><a href="http://xangelo.ca">Angelo's</a> Outliner - v<?php $version = Controller_Patch::current_version(); echo $version->version; ?></p>
+        <p><a href="http://xangelo.ca">Angelo's</a> Outliner - v<?php echo Controller_Patch::current_version(); ?></p>
         <?php $james->execute('footer'); ?>
       </footer>
 
