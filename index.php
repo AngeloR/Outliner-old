@@ -295,6 +295,8 @@ try {
 		dispatch_get('/___settings/plugin/rebuild', array('Controller_Plugin','rebuild_dependency_list'));
 		dispatch_get('/___settings/plugin/activate/:id',array('Controller_Plugin','activate'));
 		dispatch_get('/___settings/plugin/deactivate/:id', array('Controller_Plugin','deactivate'));
+		
+		dispatch_get('/___settings/log/:page', array('Controller_Site','log'));
 
 		$james->execute('private-routes');
 	}
