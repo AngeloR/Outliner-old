@@ -77,7 +77,7 @@ class Model_Node extends RedBean_SimpleModel {
 		}
 		else {
 			$split = explode('/',$path);
-		
+
 			$title = array_pop($split);
 			$path = '/'.implode('/',$split);
 		
@@ -91,8 +91,29 @@ class Model_Node extends RedBean_SimpleModel {
 			}
 		
 		}
-		
 		return $node;
+	}
+	
+	/**
+	 * 
+	 * This method goes through the arguments and parses them out into a single 
+	 * path.
+	 */
+	public static function make_path() {
+		$args = func_get_args();
+		$path = array();
+
+		foreach($args as $i => $arg) {
+			$e = explode('/',$arg);
+			foreach($e as $x => $piece) {
+				if($piece != '') {
+					$path[] = $piece;
+				}
+			}
+		}
+		
+		$string = implode('/',$path);
+		return $string;
 	}
 
 	
