@@ -180,6 +180,9 @@ function before($route) {
 	
 	layout('layout.html.php');
 	d('View path set to: '.config('app.path.view').config('app.theme'));
+	
+	set('page_title',config('site.title'));
+	set('breadcrumbs','');
 }
 
 /**
@@ -193,8 +196,7 @@ function before_render($content_or_func, $layout, $locals, $view_path) {
 	$user = isset($_SESSION[config('env.session')])?unserialize($_SESSION[config('env.session')]):null;
 	set('user',$user);
 	
-	set('page_title',config('site.title'));
-	set('breadcrumbs','');
+	
 	
 	return array($content_or_func, $layout, $locals, $view_path);
 }
