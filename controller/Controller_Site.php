@@ -70,4 +70,20 @@ class Controller_Site extends Controller {
 
 		die();
 	}
+	
+	public static function log($page = 0) {
+		$logs = R::getAll('select id,details,type,timestamp from log order by timestamp desc');
+		$dg = new OPCDataGrid($logs);
+		$dg->fields(array(
+			'details' => 'Details',
+			'type' => 'Type',
+			'timestamp' => 'Timestamp'
+		));
+		
+		$dg->modify('timestamp', function($val, $row){
+			return date('l jS \of F Y h:i:s A',$val);
+		});
+		
+		return html($dg->build());
+	}
 }
