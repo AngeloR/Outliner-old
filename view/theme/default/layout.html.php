@@ -41,6 +41,7 @@
            	 		<li<?php echo (request_uri() == '/___settings')?' class="active"':''; ?>><a href="<?php echo url_for('___settings'); ?>">General Settings</a></li>
            	 		<li<?php echo (request_uri() == '/___settings/plugin')?' class="active"':''; ?>><a href="<?php echo url_for('___settings','plugin'); ?>">Plugin Manager</a></li>
            	 		<?php $james->execute('settings-menu'); ?>
+           	 		<li<?php echo (request_uri() == '/__settings/log')?' class="active"':''; ?>><a href="<?php echo url_for('___settings','log'); ?>">Logs</a></li>
            	 		<li><a href="http://xangelo.ca/?/Outliner/Documentation/" target="_blank">Documentation</a>
            	 	</ul>
            	 </li>
