@@ -80,10 +80,12 @@ class Controller_Site extends Controller {
 			'timestamp' => 'Timestamp'
 		));
 		
-		$dg->modify('timestamp', function($val, $row){
-			return date('l jS \of F Y h:i:s A',$val);
-		});
+		$dg->modify('timestamp', 'controller_site_modify_timestamp');
 		
 		return html($dg->build());
 	}
+}
+
+function controller_site_modify_timestamp($val,$row) {
+	return date('l jS \of F Y h:i:s A',$val);
 }
