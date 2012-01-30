@@ -7,3 +7,6 @@ _plugins/*
 *.psd
 *.zip
 updates/*
+updates/
+outliner.sublime-project
+outliner.sublime-workspace
