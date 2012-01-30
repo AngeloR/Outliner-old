@@ -42,14 +42,9 @@ class Date_Difference
             return $dayDiff . ' days ago'; 
         } elseif($dayDiff == 7) { 
             return '1 week ago'; 
-        } elseif($dayDiff < (7*6)) { // Modifications Start Here 
-            // 6 weeks at most 
-            return ceil($dayDiff/7) . ' weeks ago'; 
-        } elseif($dayDiff < 365) { 
-            return ceil($dayDiff/(365/12)) . ' months ago'; 
         } else { 
-            $years = round($dayDiff/365); 
-            return $years . ' year' . ($years != 1 ? 's' : '') . ' ago'; 
+            // return the date that it was modified
+            return date('F n, Y', $date); 
         } 
     } 
 }
