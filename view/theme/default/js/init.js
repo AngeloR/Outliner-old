@@ -240,7 +240,7 @@ sandbox.register_module('modal', util.extend({
 		return sandbox.request_module('modal');
 	}
 	, show: function() {
-		$('#public-modal').modal({'background': 'static', 'keyboard': true, 'show': true});
+		$('#public-modal').modal({'backdrop': 'static', 'keyboard': true, 'show': true});
 	}
 	, initialize: function() {
 		
@@ -307,7 +307,7 @@ sandbox.register_module('node', util.extend({
 					$('#preview-title').html(converter.makeHtml('### '+res.title));
 					$('#share-url').val(window.location.href.split('?')[0]+'?/preview/'+res.share);
 					
-					$('#preview-pane').modal({'background': 'static', 'keyboard': true, 'show': true});
+					$('#preview-pane').modal({'backdrop': 'static', 'keyboard': true, 'show': true});
 					$('#share-url').focus();
 				}
 			}
