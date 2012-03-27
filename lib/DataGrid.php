@@ -259,7 +259,7 @@ class OPCDataGrid {
      */
     public function build() {
         $this->buildDisplayFields();
-        $tmp = '<table class="datagrid zebra-striped" cellspacing="0">';
+        $tmp = '<table class="table table-striped" cellspacing="0">';
         $tmp .= $this->createTableHeaders();
 				$tmp .= '<tbody>';
         foreach($this->displaySource as $i => $row) {
