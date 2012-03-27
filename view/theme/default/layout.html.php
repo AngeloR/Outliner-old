@@ -92,13 +92,11 @@
             <div class="modal-body" id="preview-content">
               
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="text-align:left">
               <form class="disable-form">
                 <label>Share URL:</label>
-                <div class="input">
                   <input type="text" id="share-url" class="span6">
                   <p class="help-block">Share this url to have others see this note. This will only work if the note is public.</p>
-                </div>
               </form>
             </div>
           </div>
