@@ -2,18 +2,20 @@
 	<?php if(Controller_Auth::is_logged_in()):?>
 	<li class="active" id="__new-node"><a href="#" id="__new-node-toggler">New Node</a></li>
 	<li class="__hidden" id="__editor">
-		<form action="<?php echo url_for('/'); ?>" method="post" id="__new-node-form">
+		<form action="<?php echo url_for('/'); ?>" method="post" id="__new-node-form" class="form-horizontal">
 			<input type="hidden" name="id" id="id">
-			<label>Title</label>
-			<div class="input">
-				<input type="text" name="title" id="title" class="xxlarge">
-				<span class="help-block">&nbsp;</span>
+			<div class="control-group">
+				<label class="control-label" for="title">Title</label>
+				<div class="controls">
+					<input type="text" name="title" id="title" class="span8">
+				</div>
 			</div>
-			
-			<label>Text</label>
-			<div class="input">
-				<textarea class="xxlarge" rows="10" name="text" id="text"></textarea>
-				<span class="help-block">&nbsp;</span>
+
+			<div class="control-group">
+				<label class="control-label" for="title">Text</label>
+				<div class="controls">
+					<textarea class="span8" rows="10" name="text" id="text"></textarea>
+				</div>
 			</div>
 		</form>
 	</li>
