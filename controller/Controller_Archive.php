@@ -44,7 +44,7 @@ class Controller_Archive extends Controller {
 	
 	public static function breadcrumbs($path,$preview_mode = false) {
 		if(empty($path)) {
-			$tmp = '<ul class="breadcrumb"><li><a href="'.url_for('/').'">Root</a></li></ul>';
+			$tmp = '<ul class="breadcrumb"><li class="active"><a href="'.url_for('/').'">Root</a></li></ul>';
 		}
 		else {
 			
@@ -66,6 +66,8 @@ class Controller_Archive extends Controller {
 					$tmp .= '<li><a href="'.url_for(implode('/',$front)).'/">'.urldecode($p).'</a><span class="divider">/</span></li>';
 				}
 			}
+
+			$tmp .= '</ul>';
 
 			
 		}

@@ -50,11 +50,11 @@ class Controller_Site extends Controller {
 			}
 			else {
 				// Passwords don't match
-				alert('error','The passwords entered did not match.');
+				alert('alert-error','The passwords entered did not match.');
 			}
 		}
 		else if((empty($_POST['password']) && !empty($_POST['confirm_password'])) || (empty($_POST['confirm_password']) && !empty($_POST['password']))) {
-			alert('error','Please enter the password and confirm it in order to change your password.');
+			alert('alert-error','Please enter the password and confirm it in order to change your password.');
 		}
 		
 		if($user->getMeta('tainted')) {

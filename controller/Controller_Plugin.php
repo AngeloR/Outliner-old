@@ -61,7 +61,7 @@ class Controller_Plugin extends Controller {
 			$p = R::findOne('plugin','id = ? and is_active = 1',array($id));
 			
 			if(empty($p)) {
-				alert('block-message error','There was a problem activating this plugin.');
+				alert('alert-error','There was a problem activating this plugin.');
 			}
 			else {
 				alert('block-message success','The plugin <b>'.$p->name.'</b> has been activated!');
@@ -82,14 +82,14 @@ class Controller_Plugin extends Controller {
 			$p = R::findOne('plugin','id = ? and is_active = 0',array($id));
 				
 			if(empty($p)) {
-				alert('block-message error','There was a problem deactivating this plugin.');
+				alert('alert-error','There was a problem deactivating this plugin.');
 			}
 			else {
-				alert('block-message success','The plugin <b>'.$p->name.'</b> has been deactivated!');
+				alert('alert-success','The plugin <b>'.$p->name.'</b> has been deactivated!');
 			}
 		}
 		else {
-			alert('block-message error','There was a problem deactivating this plugin.');
+			alert('alert-error','There was a problem deactivating this plugin.');
 		}
 		
 		return self::list_plugins();
@@ -97,27 +97,27 @@ class Controller_Plugin extends Controller {
 }
 
 function __modify_name($val,$row) {
-		return '<b>'.$val.'</b><span class="help-block">'.$row['description'].'</span>';
+		return '<b>'.$val.'</b><p class="help-block">'.$row['description'].'</p>';
 	}
 
 
 function __toggle_act($val,$row) {
 		if($row['is_active'] == 1) {
-			$tmp = '<a href="'.url_for('___settings','plugin','deactivate',$val).'" class="btn danger">Deactivate</a>';
+			$tmp = '<a href="'.url_for('___settings','plugin','deactivate',$val).'" class="btn btn-danger">Deactivate</a>';
 		}
 		else {
 			$temp = R::dispense('temp');
 			$temp->import($row);
 			$manager = new Plugin_Manager();
 			if($manager->can_activate($temp)) {
-				$tmp = '<a href="'.url_for('___settings','plugin','activate',$val).'" class="btn success">Activate</a>';
+				$tmp = '<a href="'.url_for('___settings','plugin','activate',$val).'" class="btn btn-success">Activate</a>';
 			}
 			else {
 				$tmp = '<a href="#" class="btn disabled">Activate</a>';
 			}
 		}
 		if(!empty($row['dependencies'])) {
-			$tmp .= '<span class="help-block"><b>Requires: </b>'.$row['dependencies'];
+			$tmp .= '<p class="help-block"><b>Requires: </b>'.$row['dependencies'].'</p>';
 		}
 			
 		return $tmp;

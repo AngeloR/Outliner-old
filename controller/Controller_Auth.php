@@ -31,7 +31,7 @@ class Controller_Auth extends Controller {
 		else {
 			set('page_title','Login');
 			set('breadcrumbs','');
-			alert('error','Please enter a valid username and password to sign up.');
+			alert('alert-error','Please enter a valid username and password to sign up.');
 			return render('page/login.html.php');
 		}
 	}

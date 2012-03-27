@@ -31,12 +31,12 @@ class Controller_Patch extends Controller {
 	
 	
 	public static function update() {
-		$version = '0.5.4';
+		$version = '0.5.5';
 		if(self::should_patch($version)) {
 			// ftp the directory over to root
 
 			$patch = Model_Patch::new_patch($version);
-			$patch->description = 'Added a Model_Node::current() method which allows you to get the current node from plugins.';
+			$patch->description = 'Added a simple logging system via Model_Log::log($type,$details)';
 			R::store($patch);
 			
 			return self::patched($version);
