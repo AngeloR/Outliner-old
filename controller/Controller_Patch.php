@@ -31,12 +31,12 @@ class Controller_Patch extends Controller {
 	
 	
 	public static function update() {
-		$version = '0.5.5';
+		$version = '0.6.0';
 		if(self::should_patch($version)) {
 			// ftp the directory over to root
 
 			$patch = Model_Patch::new_patch($version);
-			$patch->description = 'Added a simple logging system via Model_Log::log($type,$details)';
+			$patch->description = 'Updated the entire system base to use the new version of Bootstrap';
 			R::store($patch);
 			
 			return self::patched($version);
